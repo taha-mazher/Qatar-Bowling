@@ -1,0 +1,119 @@
+{
+  "title": "Choose the visual world",
+  "question": "The roll assigned Lane Survey. Keep it, take an alternate, or re-roll.",
+  "options": [
+    {
+      "id": "assigned",
+      "label": "Lane Survey",
+      "kicker": "THE ROLL",
+      "lineage": "oil-pattern sheets and lane condition drawings bowlers actually read",
+      "thesis": "The centre drawn as the measured object it is: 32 lit strips of maple on a dark house floor, time running down each one. Refuses the page every bowling site ships, a dark stock photo of a lane with a neon glow and a floating BOOK NOW.",
+      "palette": ["#0B0A0A", "#E7A94F", "#8A1538", "#F2EDE9"],
+      "materials": ["lacquered lane maple under house lights", "drafting rule, board numbers, foul line", "oil-pattern fill as the booked state"],
+      "viewport": "Near-black lacquer ground. 32 vertical lit maple strips run from the top of the viewport down past the fold. Time runs down each strip against a measured rule at the left edge in tabular figures. Booked stretches fill maroon; open stretches stay lit. The headline sits in the dark gutter margin, one line, and the primary action is the strips themselves: tap an open stretch to start booking. The proof and the action are the same object.",
+      "risk": "A measured technical world can read clinical for a parent planning a seven-year-old birthday party. The warmth has to arrive as real photography of kids bowling set into the lit strips and in the copy voice. Weak photography turns this cold.",
+      "raised": [
+        { "from": "challenger-versailles", "raise": "The page now has one true axial spine with a resolving vista: everything is measured down a single 60-foot axis and the sightline ends on the booking action, rather than scattering measured marks across independent sections." },
+        { "from": "challenger-zine", "raise": "The booking flow teaches its own rules warmly at the moment they bind. Minimum 2 lanes and 10 players is explained where it stops you, in plain language, never as fine print." },
+        { "from": "challenger-chaekgeori", "raise": "One construction rule governs every atom. Nav, footer, inputs and buttons are all drawn in the survey line weights and board numbering. No untreated stock chrome anywhere on the page." }
+      ]
+    },
+    {
+      "id": "model-pick",
+      "label": "The Scoresheet",
+      "kicker": "IMPECCABLE'S PICK",
+      "lineage": "the ten-frame scoresheet and the overhead scoring monitor",
+      "thesis": "The whole site set in the notation every bowler reads without thinking: ten boxed frames, X and slash, running total.",
+      "palette": ["#101010", "#F2EDE9", "#8A1538", "#2E9CCA"],
+      "materials": ["boxed frame grid", "CRT overhead phosphor", "hand-marked X and slash"],
+      "viewport": "The frame grid as the whole page structure, each frame a section, the running total carrying the booking state.",
+      "risk": "This is my top-ranked candidate and it is also where most runs in this category land. The scoresheet is the first thing anyone reaches for when designing a bowling site, so it is strong, legible, and the least surprising thing on this table."
+    },
+    {
+      "id": "challenger-teletext",
+      "label": "Teletext Service",
+      "verdict": "competitive",
+      "lineage": "broadcast teletext magazines, 40 by 24 on black",
+      "thesis": "The centre as a broadcast index: lane availability as live figures keyed by page number.",
+      "palette": ["#000000", "#00FFFF", "#FFFF00", "#FFFFFF"],
+      "materials": ["block mosaic sixels", "phosphor glow", "rigid character cell grid"],
+      "viewport": "P302 builds itself from cyan blocks: tonight lanes as live figures on flat black.",
+      "case": "Holds product clarity outright. Teletext was the availability medium, football scores and schedules in a strict grid, and a lane board is exactly that. Loses audience identification: a young parent in Doha has no teletext memory, and the federation reads it as retro novelty rather than official.",
+      "risk": "Reads as retro-novelty the moment the grid loosens, and the eight fixed broadcast colours cannot carry Qatar maroon.",
+      "hero": "https://impeccable.style/worlds/cards/broadcast-programming-teletext-service-hero.webp",
+      "board": "https://impeccable.style/worlds/cards/broadcast-programming-teletext-service.webp"
+    },
+    {
+      "id": "challenger-bass",
+      "label": "Saul Bass Title Sequence",
+      "verdict": "competitive",
+      "lineage": "cut-paper title sequences on flat saturated fields",
+      "thesis": "Bowling told as cut-paper silhouettes, one idea per card, the field colour swapping per act.",
+      "palette": ["#8A1538", "#0D0D0D", "#F2EDE9", "#E7A94F"],
+      "materials": ["cut paper", "flat saturated field", "jittering hand-drawn line"],
+      "viewport": "A black cut-paper arm swinging a ball across a full-bleed maroon field, one line of hand-set caps off baseline.",
+      "case": "Holds audience identification: bowling own mid-century era matches Bass exactly, and the flat saturated field takes Qatar maroon perfectly. Loses product clarity: a timed card sequence fights a booking task. You cannot check tonight availability inside a title sequence, and the primary user came to do precisely that.",
+      "risk": "The timed cards actively obstruct the one job the site exists to do.",
+      "hero": "https://impeccable.style/worlds/cards/posters-covers-sleeves-saul-bass-title-hero.webp",
+      "board": "https://impeccable.style/worlds/cards/posters-covers-sleeves-saul-bass-title.webp"
+    },
+    {
+      "id": "challenger-jacquard",
+      "label": "Jacquard Punched Brocade",
+      "verdict": "competitive",
+      "lineage": "punch-card looms weaving binary instructions into a motif",
+      "thesis": "Availability as a binary matrix: thousands of lift-or-skip decisions resolving into a readable pattern.",
+      "palette": ["#0B1330", "#C9A227", "#EFE6D2", "#14100C"],
+      "materials": ["midnight silk warp", "gold weft float", "punch-card cream instruction rows"],
+      "viewport": "Rows of punched slots above, the woven availability motif gathering below.",
+      "case": "Holds product clarity on a real structural match: a binary lift matrix and a lane-hour availability grid are the same data, and the loom dual representation gives an exact accessible text equivalent for free. Loses audience identification: nothing about a Doha bowling centre lives in a Lyon weaving shed, and the federation would read it as decoration.",
+      "risk": "The structural match is invisible to every visitor who is not already looking for it.",
+      "hero": "https://impeccable.style/worlds/cards/textiles-weave-drape-fashion-jacquard-punched-brocade-hero.webp",
+      "board": "https://impeccable.style/worlds/cards/textiles-weave-drape-fashion-jacquard-punched-brocade.webp"
+    },
+    {
+      "id": "challenger-versailles",
+      "label": "Gardens of Versailles",
+      "verdict": "declined",
+      "lineage": "axial vistas, parterres, forced perspective",
+      "palette": ["#2F4A32", "#C8B78F", "#B08D45"],
+      "materials": ["clipped hedge", "raked gravel", "gilt bronze"],
+      "case": "Loses both axes. A Doha parent does not identify with French formal landscape, and axial garden rooms do not clarify lane availability.",
+      "kept": "Axial choreography: one true spine with a sightline that resolves at a fixed point.",
+      "hero": "https://impeccable.style/worlds/cards/architecture-inhabitable-space-versailles-bosquet-vistas-hero.webp"
+    },
+    {
+      "id": "challenger-zine",
+      "label": "Hand-Drawn Zine Explainer",
+      "verdict": "declined",
+      "lineage": "marker lettering, doodle arrows, mascots",
+      "palette": ["#F4EFE3", "#111111", "#FFD93D"],
+      "materials": ["cream paper", "marker ink", "highlighter swipe"],
+      "case": "Loses both axes. Hand-drawn undermines the institutional credibility a state-owned federation venue needs, and prices, hours and availability demand a precision the form actively refuses.",
+      "kept": "Teaching warmth: guide the visitor through a process with explicit friendly wayfinding at the moment a rule binds.",
+      "hero": "https://impeccable.style/worlds/cards/hand-drawn-zine-explainer-hero.webp"
+    },
+    {
+      "id": "challenger-chaekgeori",
+      "label": "Chaekgeori Reverse Perspective",
+      "verdict": "declined",
+      "lineage": "painted bookshelf screens opening toward the viewer",
+      "palette": ["#3E6B58", "#B4472E", "#EDE6D6"],
+      "materials": ["mineral pigment on silk", "outlined objects", "no cast shadow"],
+      "case": "Loses both axes. The audience has no relationship to Joseon shelf painting, and a perceptual trick that makes space feel wrong is the opposite of what a booking task needs.",
+      "kept": "The courage of a single perceptual construction carried across every component without exception.",
+      "hero": "https://impeccable.style/worlds/cards/graphic-worlds-publishing-chaekgeori-reverse-perspective-hero.webp"
+    }
+  ],
+  "reroll": { "registers": ["safer", "bolder"] },
+  "canon": true,
+  "canonCard": {
+    "label": "The category standard",
+    "thesis": "What every bowling centre site ships, executed impeccably: full-bleed lane photo, neon glow, big BOOK NOW, three feature cards, a party package grid.",
+    "palette": ["#0F172A", "#FFFFFF", "#F59E0B"],
+    "materials": ["stock lane photography", "neon accent glow", "rounded feature cards"],
+    "viewport": "A dark hero photo of a lane with the headline centred over it and a single amber button.",
+    "risk": "Indistinguishable from every competitor by design, and it makes the pitch an argument about taste rather than about bookings."
+  },
+  "steer": true
+}

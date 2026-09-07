@@ -1,0 +1,56 @@
+▲ Next.js 16.3.2 (Turbopack)
+- Local:         http://localhost:3939
+- Network:       http://192.168.18.22:3939
+✓ Ready in 577ms
+✓ Running next.config.ts took 39ms
+
+ GET / 200 in 1959ms (next.js: 1718ms, application-code: 241ms)
+ GET / 200 in 95ms (next.js: 11ms, application-code: 84ms)
+✓ Compiled in 155ms
+✓ Compiled in 64ms
+✓ Compiled in 60ms
+✓ Compiled in 28ms
+ GET / 200 in 174ms (next.js: 31ms, application-code: 143ms)
+ GET / 200 in 91ms (next.js: 19ms, application-code: 72ms)
+✓ Compiled in 37ms
+ GET / 200 in 60ms (next.js: 14ms, application-code: 46ms)
+✓ Compiled in 34ms
+ GET / 200 in 44ms (next.js: 9ms, application-code: 35ms)
+ GET / 200 in 40ms (next.js: 9ms, application-code: 31ms)
+✓ Compiled in 30ms
+ GET / 200 in 43ms (next.js: 10ms, application-code: 33ms)
+✓ Compiled in 44ms
+ GET / 200 in 123ms (next.js: 5ms, application-code: 118ms)
+ GET /book 200 in 341ms (next.js: 312ms, application-code: 29ms)
+[browser] GSAP target [object NodeList] not found. https://gsap.com (components/BookingFlow.tsx:67:12)
+[browser] GSAP target  not found. https://gsap.com (components/BookingFlow.tsx:67:12)
+[browser] GSAP target [object NodeList] not found. https://gsap.com (components/BookingFlow.tsx:67:12)
+[browser] GSAP target  not found. https://gsap.com (components/BookingFlow.tsx:67:12)
+ GET /parties 200 in 177ms (next.js: 149ms, application-code: 29ms)
+ GET /bowling 200 in 173ms (next.js: 137ms, application-code: 36ms)
+ GET /leagues 200 in 138ms (next.js: 117ms, application-code: 22ms)
+ GET /centre 200 in 167ms (next.js: 138ms, application-code: 28ms)
+ GET / 200 in 43ms (next.js: 12ms, application-code: 30ms)
+✓ Compiled in 94ms
+ GET / 200 in 88ms (next.js: 6ms, application-code: 82ms)
+✓ Compiled in 36ms
+ GET / 200 in 52ms (next.js: 12ms, application-code: 39ms)
+ GET / 200 in 82ms (next.js: 4ms, application-code: 78ms)
+ GET / 200 in 188ms (next.js: 4ms, application-code: 183ms)
+ GET /book 200 in 103ms (next.js: 6ms, application-code: 97ms)
+ GET /parties 200 in 103ms (next.js: 16ms, application-code: 87ms)
+[browser] GSAP target [object NodeList] not found. https://gsap.com (components/BookingFlow.tsx:67:12)
+[browser] GSAP target  not found. https://gsap.com (components/BookingFlow.tsx:67:12)
+[browser] GSAP target [object NodeList] not found. https://gsap.com (components/BookingFlow.tsx:67:12)
+[browser] GSAP target  not found. https://gsap.com (components/BookingFlow.tsx:67:12)
+✓ Compiled in 48ms
+ GET /book 200 in 97ms (next.js: 8ms, application-code: 89ms)
+ GET / 200 in 139ms (next.js: 6ms, application-code: 133ms)
+ GET /parties 200 in 99ms (next.js: 41ms, application-code: 59ms)
+ GET / 200 in 99ms (next.js: 63ms, application-code: 36ms)
+ GET /book 200 in 41ms (next.js: 4ms, application-code: 37ms)
+ GET /book 200 in 46ms (next.js: 5ms, application-code: 41ms)
+ GET /book 200 in 35ms (next.js: 11ms, application-code: 24ms)
+ GET /book 200 in 38ms (next.js: 4ms, application-code: 34ms)
+ GET /book 200 in 32ms (next.js: 9ms, application-code: 23ms)
+[?25h
