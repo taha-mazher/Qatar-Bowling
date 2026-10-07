@@ -1,36 +1,69 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Qatar Bowling Center: redesign pitch
 
-## Getting Started
+A speculative redesign of [qatarbowlingcenter.com](https://www.qatarbowlingcenter.com),
+built to win the rebuild contract. It is a pitch artifact, not the production
+system, and it is not affiliated with or endorsed by the Qatar Bowling Federation.
 
-First, run the development server:
+## The argument
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+The current site tells every visitor to phone between 2 PM and 10 PM, while the
+centre is open until midnight. The parties page lists no packages and no prices.
+Every booking is a phone call.
+
+This build proves one thing: a booking can happen without that call. The
+homepage speaks first to a parent planning a birthday party on a phone, outside
+office hours.
+
+## What is built
+
+| Route | What it does |
+|---|---|
+| `/` | Home, led by a lane availability board |
+| `/book` | Full booking flow: date, lanes, time slot, details, confirmation |
+| `/parties` | Party and event packages with real prices |
+| `/bowling` | Rates, hours, house rules, etiquette, dress code |
+| `/leagues` | The three resident clubs and league schedule |
+| `/centre` | Other facilities, the pro shop, and contact |
+
+The original 18 pages are consolidated into these routes. See [`PLAN.md`](PLAN.md)
+for the information architecture and the reasoning behind each merge.
+
+The booking flow enforces the centre's actual rules in the UI: lane and player
+minimums, the Friday league hours when all 32 lanes are reserved, and the four
+bumper lanes for children.
+
+## Deliberately not built
+
+No database, no payments, no auth, no CMS. All content lives in typed
+TypeScript files, and availability is deterministic demo data generated in
+[`lib/availability.ts`](lib/availability.ts). That file is the only thing a
+real lane inventory would replace. A booking backend is deferred until the
+client signs.
+
+## Stack
+
+Next.js 16 (App Router), React 19, TypeScript, Tailwind CSS 4, GSAP for motion.
+
+```
+app/          routes
+components/   BookingFlow, LaneBoard, header and footer
+lib/          data.ts (content), availability.ts (slot logic)
+assets/       source material audited from the existing site
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Run it
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm install
+npm run dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Then open http://localhost:3000.
 
-## Learn More
+## How it was planned
 
-To learn more about Next.js, take a look at the following resources:
+The planning documents are kept in the repository on purpose:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- [`PRODUCT.md`](PRODUCT.md): users, purpose, positioning and operating facts
+- [`PLAN.md`](PLAN.md): pitch angle, scope and information architecture
+- [`DESIGN.md`](DESIGN.md): the design direction, including what was rejected and why
