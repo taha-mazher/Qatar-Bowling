@@ -1,0 +1,242 @@
+@import "tailwindcss";
+
+/* ============================================================
+   LANE SURVEY
+   The centre drawn as the measured object it is.
+   Ground = the dark house floor. Lanes = lit maple strips.
+   Maroon = the marking system and the booked state.
+   ============================================================ */
+
+:root {
+  /* the house floor: near-black lacquer, slightly warm */
+  --ground: #0b0a0a;
+  --ground-raised: #16110e;
+  --ground-sunk: #050404;
+
+  /* drafting linework, read on the dark ground */
+  --rule: #3a2e26;
+  --rule-bright: #7a6454;
+
+  /* lane maple under the house lights */
+  --maple: #e7a94f;
+  --maple-lit: #f8cd84;
+  --maple-deep: #a86d24;
+  --maple-gutter: #241a12;
+
+  /* Qatar maroon: the marking colour and the booked fill */
+  --maroon: #8a1538;
+  --maroon-bright: #b21c49;
+  --maroon-sunk: #4d0c1f;
+
+  /* lettering */
+  --bone: #f2ede9;
+  --bone-dim: #c2b8b1;
+
+  --measure-w: 1240px;
+}
+
+@theme inline {
+  --color-ground: var(--ground);
+  --color-ground-raised: var(--ground-raised);
+  --color-ground-sunk: var(--ground-sunk);
+  --color-rule: var(--rule);
+  --color-rule-bright: var(--rule-bright);
+  --color-maple: var(--maple);
+  --color-maple-lit: var(--maple-lit);
+  --color-maple-deep: var(--maple-deep);
+  --color-maple-gutter: var(--maple-gutter);
+  --color-maroon: var(--maroon);
+  --color-maroon-bright: var(--maroon-bright);
+  --color-maroon-sunk: var(--maroon-sunk);
+  --color-bone: var(--bone);
+  --color-bone-dim: var(--bone-dim);
+  --font-display: var(--font-archivo);
+  --font-body: var(--font-archivo);
+}
+
+/* ---------- base ---------- */
+
+html {
+  background: var(--ground);
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background: var(--ground);
+  color: var(--bone);
+  font-family: var(--font-archivo), ui-sans-serif, system-ui, sans-serif;
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum" 1;
+  line-height: 1.5;
+  overflow-x: hidden;
+}
+
+/* every figure in this world is a measurement, so they all line up */
+.tnum {
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum" 1;
+}
+
+/* drafting lettering: expanded, tracked, the survey's label voice */
+.label {
+  font-stretch: 125%;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-size: 0.6875rem;
+  color: var(--bone-dim);
+}
+
+.display {
+  font-stretch: 118%;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 0.94;
+  text-wrap: balance;
+}
+
+/* ---------- browser surfaces: these ship with the design, not the browser ---------- */
+
+::selection {
+  background: var(--maroon);
+  color: var(--bone);
+}
+
+html {
+  caret-color: var(--maple);
+  scrollbar-color: var(--rule-bright) var(--ground-sunk);
+  scrollbar-width: thin;
+}
+
+::-webkit-scrollbar {
+  width: 11px;
+  height: 11px;
+}
+::-webkit-scrollbar-track {
+  background: var(--ground-sunk);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--rule-bright);
+  border: 3px solid var(--ground-sunk);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--maple-deep);
+}
+
+:focus-visible {
+  outline: 2px solid var(--maple-lit);
+  outline-offset: 3px;
+}
+
+a {
+  text-underline-offset: 0.22em;
+  text-decoration-thickness: 1px;
+}
+
+/* ---------- the lane: this world's one material ---------- */
+
+/* A lane is lit hardest at the foul line and falls off toward the pins, with
+   the boards drawn as hairlines over that light. Both layers live in ONE rule:
+   splitting them let a second `background` shorthand erase the light. */
+.lane {
+  background-color: var(--maple);
+  background-image:
+    repeating-linear-gradient(
+      90deg,
+      rgba(109, 67, 21, 0.26) 0 1px,
+      transparent 1px 8px
+    ),
+    linear-gradient(
+      180deg,
+      #fbd79a 0%,
+      var(--maple-lit) 20%,
+      var(--maple) 62%,
+      var(--maple-deep) 100%
+    );
+}
+
+/* the gutter that runs each side of every lane */
+.lane-gutter {
+  background: linear-gradient(
+    180deg,
+    #3a2a1c 0%,
+    var(--maple-gutter) 40%,
+    #120c08 100%
+  );
+}
+
+/* a booked stretch: oil laid down the lane, boards still reading through it */
+.oil-fill {
+  background-color: var(--maroon);
+  background-image: linear-gradient(
+    180deg,
+    var(--maroon-bright) 0%,
+    var(--maroon) 45%,
+    var(--maroon-sunk) 100%
+  );
+}
+
+.oil {
+  background-color: var(--maroon);
+  background-image:
+    repeating-linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.28) 0 1px,
+      transparent 1px 7px
+    ),
+    linear-gradient(
+      180deg,
+      var(--maroon-bright) 0%,
+      var(--maroon) 45%,
+      var(--maroon-sunk) 100%
+    );
+}
+
+/* Desktop has a mouse, so all 32 lanes fit the width. Touch screens keep a
+   44px minimum per lane and scroll instead. */
+.board-grid {
+  display: grid;
+  grid-template-columns: 46px repeat(32, minmax(38px, 1fr));
+  min-width: max-content;
+}
+@media (min-width: 1100px) {
+  .board-grid {
+    grid-template-columns: 52px repeat(32, minmax(0, 1fr));
+    min-width: 0;
+  }
+}
+
+/* the drafting sheet: linework in negative, never a cream page */
+.sheet {
+  background: var(--ground-raised);
+  border: 1px solid var(--rule);
+  background-image:
+    repeating-linear-gradient(0deg, rgba(122, 100, 84, 0.09) 0 1px, transparent 1px 24px),
+    repeating-linear-gradient(90deg, rgba(122, 100, 84, 0.09) 0 1px, transparent 1px 24px);
+}
+
+/* ---------- motion ---------- */
+
+/* Content is visible by default. GSAP animates from an already-visible
+   baseline, so a failed script never hides the page. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Lane cells are real touch targets on phones and tighten up on desktop,
+   where a mouse does the pointing. */
+.board-cell {
+  height: 44px;
+}
+@media (min-width: 1100px) {
+  .board-cell {
+    height: 30px;
+  }
+}

@@ -1,0 +1,148 @@
+# Design direction
+
+## Rejected directions
+
+- Palette "family blue + chore green" (#2563EB/#059669): matched a chores app.
+  Generic Tailwind blue is the templated default to avoid.
+- Fonts Russo One / Chakra Petch: esports fonts. Wrong register for a
+  government-owned venue run by a national federation.
+
+## Colour evidence (verified, not assumed)
+
+Pulled from their live homepage HTML and their own logo files.
+
+What their SITE uses today:
+  #c74300  burnt orange   (20 uses, their dominant branded colour)
+  #8b6755  warm brown
+  #ff8044 / #fabd71 / #fcd29d / #fef6ed   warm orange + cream tints
+  #ed1566 / #116dff  are Wix chrome, not theirs. Ignored.
+
+What their BRAND actually is:
+  QBF federation logo  = maroon rosette, black bowling ball centre
+  QBC building signage = maroon "Q" mark
+
+Their website contradicts their own identity. The federation logo and the
+sign on the building are maroon. The site is burnt orange. Following the logo
+is a brand-consistency decision, not a matter of taste.
+
+The building signage is also bilingual Arabic and English, while the website is
+English only, so the layout is built to take Arabic later (see Layout).
+
+Decision: maroon primary, drop the orange. Two dark warm reds side by side
+muddy each other, and the orange is the one that does not match the logo.
+
+Deep maroon, a gold accent and a warm off-white is a common sports club and
+heritage palette; this one uses the actual Qatar maroon rather than a generic
+red-900.
+
+## Verified contrast
+
+  maroon #8A1538 on white          9.35  AA pass
+  maroon #8A1538 on #FAF8F7        8.84  AA pass
+  gold #F0B429 on near-black      10.39  AA pass
+  gold #F0B429 on white            1.86  FAIL
+  fg #171314 on #FAF8F7           17.40  AA pass
+  #F7F5F4 on #0F0D0E              17.82  AA pass
+  muted #6B6266 on #FAF8F7         5.57  AA pass
+  muted #A8A0A2 on #0F0D0E         7.58  AA pass
+
+HARD RULE from the failure above: gold is a fill colour carrying dark text.
+Never gold text, never gold on white, never gold as a border that has to be
+seen. CTA buttons only.
+
+## Brand anchor: Qatar maroon
+
+QBC is state-owned since 2006 and run by the Qatar Bowling Federation.
+Primary is Qatar maroon, the national and federation colour.
+
+Why:
+- instantly legible as official to a federation audience
+- distinctive, nothing like the stock blue every Wix competitor uses
+- already the venue's identity, not a new brand
+
+## Concept: the venue itself
+
+A bowling centre is a dark room with bright lanes and warm wood.
+The site mirrors that: dark hero, warm lane-wood accent, bright CTA.
+
+NOT a fully dark site. Parents booking birthday parties read prices, hours
+and forms. Dark hero and section breaks, light content and booking flow.
+
+## Tokens
+
+Dark surfaces
+  --bg-dark        #0F0D0E   near-black, slightly warm
+  --surface-dark   #1A1617
+  --fg-on-dark     #F7F5F4
+  --muted-on-dark  #A8A0A2
+
+Light surfaces
+  --bg             #FAF8F7
+  --surface        #FFFFFF
+  --fg             #171314
+  --muted-fg       #6B6266
+  --border         #E5E0DE
+
+Brand
+  --primary        #8A1538   Qatar maroon
+  --primary-hover  #A61A43
+  --on-primary     #FFFFFF
+  --accent         #F0B429   lane wood / pin highlight, CTA only
+  --on-accent      #0F0D0E
+  --destructive    #DC2626
+
+Contrast verified above. All pairs pass AA except gold-on-white,
+which is why gold is fill-only.
+
+Accent is reserved for primary CTAs only. If gold appears more than twice
+on a screen it stops meaning "click here".
+
+## Typography
+
+Display: Barlow Condensed (600/700)
+Body:    Inter (400/500/600)
+
+Why: bowling is a game of numbers. Condensed numerals read as scoreboard,
+which suits lane numbers, rates and hours tables. Inter carries small-size
+form and table legibility that a condensed face cannot.
+
+Both Google-hosted and free. For Arabic, Inter pairs with IBM Plex Sans Arabic
+or Noto Kufi Arabic.
+
+Base 16px, line-height 1.5, no body text under 14px.
+
+## Motion
+
+Tier: subtle to standard. 150-300ms, ease-out.
+Purpose only: state changes, section reveals on scroll, booking step
+transitions. No scroll-jacking, no decorative loops.
+Respect prefers-reduced-motion from the first component.
+Animate transform and opacity only.
+
+## Signature element
+
+Homepage carries a live "lanes open right now" panel: 32 lane markers,
+current availability, one tap to book.
+
+The current site says "call between 2 PM and 10 PM". This one shows the
+answer and takes the booking.
+
+In this build it reads from the same hard-coded availability as /book.
+
+## Layout
+
+Mobile-first. Breakpoints 375 / 768 / 1024 / 1440.
+Spacing scale 16-64px. Content max-width ~1200px.
+CSS logical properties throughout (margin-inline-start, not margin-left)
+so adding Arabic is not a rewrite.
+
+## Non-negotiables
+
+- SVG icons (Lucide), never emoji
+- visible focus rings, never removed
+- touch targets 44x44 minimum, 8px apart
+- alt text on every image
+- reserve image dimensions, CLS under 0.1
+- WebP/AVIF, lazy load below the fold
+- labels visible, never placeholder-only
+- errors inline next to the field
